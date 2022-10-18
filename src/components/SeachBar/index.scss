@@ -1,0 +1,67 @@
+.searchbar-container {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: #030303;
+    width: 100%;
+
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: center;
+    // padding: 10px;
+    // gap: 10px;
+
+    .search-bar {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    margin: 10px 0;
+    flex-shrink: 500px;
+
+    color: #030303;
+
+    font-weight: 900;
+}
+
+input::placeholder {
+    color: #ccc;
+    font-weight: 900;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 16px;
+    // outline: none;
+    transition: all 0.3s ease-in-out;
+    margin: 10px 0;
+    flex-shrink: 500px;
+
+    color: #030303;
+    font-weight: 900;
+
+    cursor: pointer;
+
+    &:active {
+        transform: scale(0.95);
+        // background-color: rgb(54, 53, 53);
+    }
+}
