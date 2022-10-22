@@ -1,21 +1,21 @@
-import fetch from 'node-fetch';
+const axios = require('axios')
 
 exports.handler = async (event, context) => {
 
     try {
-        const url = `https://pokeapi.co/api/v2/pokedex/1/`
-        const response = await fetch(url)
-        const data = await response.json()
 
-        const originalPokedex = data.pokemon_entries.slice(0, 151)
-        const secondPokedex = data.pokemon_entries.slice(151, 251)
+        const url = `https://pokeapi.co/api/v2/pokedex/1/`
+        const response = await axios(url)
+        const pokedexData = await response.data
+
         return {
             statusCode: 200,
-            body: JSON.stringify(secondPokedex)
-
+            body: JSON.stringify(pokedexData)
         }
+
     }
     catch (err) {
         return { statusCode: 500, body: err.toString() }
     }
 }
+

@@ -12,7 +12,7 @@ const App = () => {
     console.log("search: ", search)
 
     const searchPokemon = await fetch('/.netlify/functions/pokemon', {
-      method: 'PUT',
+      method: 'POST',
       body: JSON.stringify(search)
     })
 
