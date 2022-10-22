@@ -9,7 +9,7 @@ import { SearchBar } from './components/SeachBar'
 const App = () => {
 
   const onSearchHandler = async (search) => {
-    console.log("search: ", search)
+
 
     const searchPokemon = await fetch('/.netlify/functions/pokemon', {
       method: 'POST',
@@ -17,9 +17,6 @@ const App = () => {
     })
 
     const pokemon = await searchPokemon.json()
-    console.log("pokemon: ", pokemon)
-
-
   }
 
 

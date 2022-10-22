@@ -6,6 +6,7 @@ exports.handler = async (event, context) => {
 
 
     try {
+        selectedPokemon === " " ? selectedPokemon = "1" : selectedPokemon
         const url = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`
         const response = await axios(url)
         const pokemonData = await response.data
@@ -22,7 +23,9 @@ exports.handler = async (event, context) => {
     }
 
     catch (err) {
-        return { statusCode: 500, body: err.toString() }
+        return {
+            statusCode: 500, body: alert(err)
+        }
     }
 
 
