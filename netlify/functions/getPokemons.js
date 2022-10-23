@@ -1,10 +1,10 @@
-const axios = require("axios");
+const axios = require('axios')
 
 exports.handler = async (event, context) => {
-    const selectedPokemon = JSON.parse(event.body);
+    const { offset, limit } = JSON.parse(event.body)
 
     try {
-        const url = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`;
+        const url = `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`;
         const response = await axios(url);
         const pokemonData = await response.data;
 

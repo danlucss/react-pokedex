@@ -1,7 +1,14 @@
-import axios from 'axios';
 
-const api = axios.create({
-    baseURL: 'https://pokeapi.co/api/v2/',
-});
 
-export default api;
+const getPokemonData = async (url) => {
+    try {
+        const response = await fetch(url);
+        return await response.json();
+    } catch (err) {
+        return alert(err);
+    }
+}
+//
+// Compare this snippet from netlify\functions\getPokemons:
+
+export default getPokemonData;
